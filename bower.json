@@ -1,0 +1,12 @@
+{
+	"name": "stapp",
+	"version": "0.0.1",
+	"homepage": "https://github.com/theaidem/stapp",
+	"license": "MIT",
+	"authors": [
+		"kokorin.max <kokorin.max@gmail.com>"
+	],
+	"dependencies": {
+		"jquery"			: "*"
+	}
+}

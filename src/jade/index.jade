@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+	head
+		meta(http-equiv="Content-Type", content="text/html; charset=utf-8")
+		meta(name="viewport", content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width, minimal-ui")
+		meta(name="apple-mobile-web-app-capable" content="yes")
+		meta(name="apple-mobile-web-app-status-bar-style" content="black")
+
+		//- facebook meta
+		meta(property="og:site_name", content="stapp")
+		meta(property="og:title", content="stapp")
+		meta(property="og:description", content="your app")
+		meta(property="og:type", content="app")
+		meta(property="og:url", content="")
+		meta(property="og:image", content="")
+
+		title stapp
+		// build:css css/main.css
+		link(rel='stylesheet', href='css/main.css')
+		// endbuild
+	body
+		h1 Go ahead for develop!
+
+		// build:js js/vendor.js
+		// bower:js
+		
+		// endbower
+		// endbuild
+
+		// build:js js/main.js
+		script(type='text/javascript', src='js/main.js')
+		// endbuild
