@@ -1,4 +1,5 @@
- # stapp
+staap
+========
 
  High productivity boilerplate make the powerfull combo coffee/stylus/jade easy to test & deploy.
 
