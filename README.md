@@ -20,7 +20,7 @@ cd yourAppFolder/
 npm install
 ```
 
-Edit "bower.json" to keep only the lib you want and then :
+Edit "bower.json" to add some libs which you want and then :
 ```shell
 gulp
 ```
