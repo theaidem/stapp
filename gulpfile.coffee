@@ -101,7 +101,7 @@ gulp.task 'coffee', ['clean'], ->
 		.pipe( notify({ onLast: true, message:'Coffee compile with success!' }) )
 
 gulp.task 'jade', ['clean'], ->
-	return gulp.src "#{src.jade}**/*.jade"
+	gulp.src "#{src.jade}**/*.jade"
 		.pipe plumber()
 		.pipe( changed(app, {extension: '.html'}))
 		.pipe( jade( {pretty: true} ) )
