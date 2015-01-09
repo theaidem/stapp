@@ -63,6 +63,14 @@ gulp.task 'injectBower', ->
 		.pipe wiredep {
 			directory: "#{app}bower_components"
 			bowerJson: require './bower.json'
+			fileTypes: {
+				html: {
+					replace: {
+						js: '<script src="/{{filePath}}"></script>'
+						css: '<link rel="stylesheet" href="/{{filePath}}" />'
+					}
+				}
+			}
 		}
 		.on 'error', gutil.log
 		.on 'error', gutil.beep
