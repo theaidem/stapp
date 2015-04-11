@@ -43,6 +43,8 @@ gulp.task 'browser-sync', ->
 	}
 
 # gulp.watch bug on new files/deleted files.
+# For wather bug:
+# echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 gulp.task 'watch', ->
 	gulp.watch "#{src.stylus}**/*.styl", ['stylus', browserSync.reload]
 	gulp.watch "#{src.jade}**/*.jade", -> 
