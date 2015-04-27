@@ -134,11 +134,10 @@ gulp.task 'usemin', ->
 	gulp.src "#{app}*.html"
 		.pipe plumber()
 		.pipe( usemin({
-			css: [minifyCss()],
-			html: [minifyHtml({empty: true})],
 			js: [uglify(), rev()]
-		}))
-		.pipe( gulp.dest(dist) )
+			css: [minifyCss()]
+			html: [minifyHtml({empty: true})]
+		})).pipe( gulp.dest(dist) )
 
 # Main tasks
 
