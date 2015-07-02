@@ -1,34 +1,35 @@
 
 # Imports
 
-gulp 			= require 'gulp'
-jade 			= require 'gulp-jade'
-coffee 			= require 'gulp-coffee'
-stylus 			= require 'gulp-stylus'
-nib 				= require 'nib'
-sourcemaps 	= require 'gulp-sourcemaps'
-plumber 		= require 'gulp-plumber'
-browserSync 	= require 'browser-sync'
-imagemin 		= require 'gulp-imagemin'
-uglify 			= require 'gulp-uglify'
-minifyHtml 	= require 'gulp-minify-html'
-minifyCss 		= require 'gulp-minify-css'
-usemin			= require 'gulp-usemin'
-gutil 			= require 'gulp-util'
-notify 			= require 'gulp-notify'
-changed 		= require 'gulp-changed'
-runSequence 	= require 'run-sequence'
-del 				= require 'del'
-rev 			= require 'gulp-rev'
-bower 			= require 'gulp-bower'
-gulpIgnore 	= require 'gulp-ignore'
-wiredep 		= require('wiredep').stream
+gulp      = require 'gulp'
+jade      = require 'gulp-jade'
+coffee      = require 'gulp-coffee'
+stylus      = require 'gulp-stylus'
+nib         = require 'nib'
+sourcemaps  = require 'gulp-sourcemaps'
+plumber     = require 'gulp-plumber'
+browserSync   = require 'browser-sync'
+imagemin    = require 'gulp-imagemin'
+uglify      = require 'gulp-uglify'
+minifyHtml  = require 'gulp-minify-html'
+minifyCss     = require 'gulp-minify-css'
+concat      = require 'gulp-concat'
+gutil       = require 'gulp-util'
+notify      = require 'gulp-notify'
+changed     = require 'gulp-changed'
+runSequence   = require 'run-sequence'
+del         = require 'del'
+spa       = require 'gulp-spa'
+rev       = require 'gulp-rev'
+bower       = require 'gulp-bower'
+gulpIgnore  = require 'gulp-ignore'
+wiredep     = require('wiredep').stream
 
 # Paths
 
 app = 'app/'
 dist = 'dist/'
-src 	= {
+src   = {
 	jade:'src/jade/'
 	coffee:'src/coffee/'
 	stylus:'src/stylus/'
@@ -130,13 +131,29 @@ gulp.task 'imagemin', ->
 		.pipe(imagemin({optimizationLevel: 7}))
 		.pipe(gulp.dest(app))
 
-gulp.task 'usemin', ->
+gulp.task 'spa', ->
 	gulp.src "#{app}*.html"
 		.pipe plumber()
-		.pipe( usemin({
-			js: [uglify(), rev()]
-			css: [minifyCss()]
-			html: [minifyHtml({empty: true})]
+		.pipe( spa.html({
+			assetsDir: "#{app}",
+			pipelines: {
+				main: (files) ->
+					files
+						.pipe(minifyHtml())
+
+				js: (files)-> 
+					files
+						.pipe(uglify())
+						.pipe(concat("js/app.js"))
+						.pipe(rev())
+				
+				css: (files)-> 
+					files
+						.pipe(minifyCss())
+						.pipe(concat("css/app.css"))
+						.pipe(rev())
+				
+			}
 		})).pipe( gulp.dest(dist) )
 
 # Main tasks
@@ -145,7 +162,7 @@ gulp.task 'compile', (callback) ->
 	runSequence [ 'bowerInstall', 'stylus', 'coffee', 'jade' ], callback
 
 gulp.task 'build', (callback) ->
-	runSequence ['cleanDist','compile'], ['injectBower'], ['usemin','imagemin'],['copy'], callback
+	runSequence ['cleanDist','compile'], ['injectBower'], ['spa','imagemin'],['copy'], callback
 
 gulp.task 'default', (callback) ->
 	runSequence ['compile'], ['injectBower'], ['browser-sync'], ['watch'], callback
