@@ -6,6 +6,7 @@
 	"authors": [
 		"kokorin.max <kokorin.max@gmail.com>"
 	],
+	"overrides":{},
 	"dependencies": {
 		"jquery"			: "*"
 	}
