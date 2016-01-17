@@ -1,1 +1,0 @@
-console.log 'Go ahead for develop!'
