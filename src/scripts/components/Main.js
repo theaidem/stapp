@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Menu from './Menu'
 
 class Main extends Component {
 
@@ -7,11 +8,22 @@ class Main extends Component {
 	}
 
 	render() {
-		return (
-			<div className="main middle">
-				STAPP
-			</div>
+		const { children } = this.props
 
+		return (
+			<div className="main">
+				<div className="ui vertical segment">
+					<div className="ui grid container">
+						<Menu { ...this.props }/>
+					</div>
+				</div>
+				
+				<div className="ui vertical segment">
+					<div className="ui grid container">
+						{ children }
+					</div>
+				</div>
+			</div>
 		)
 	}
 }

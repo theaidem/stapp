@@ -17,9 +17,9 @@ class App extends Component {
 	}
 
 	render() {
-		const { isLoading, err } = this.props
+		const { isLoading, children, err } = this.props
 		if (err) {return <Error err={err}/>}
-		return isLoading ? <Load/> : <Main/>
+		return isLoading ? <Load/> : <Main children={ children } />
 	}
 
 }
