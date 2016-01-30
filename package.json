@@ -14,15 +14,17 @@
   "author": "Max Kokorin",
   "license": "MIT",
   "dependencies": {
+    "babel-core": "^6.4.5",
     "history": "^1.17.0",
-    "react": "^0.14.2",
-    "react-dom": "^0.14.2",
-    "react-redux": "^4.0.6",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.1.2",
     "react-router": "^1.0.3",
-    "redux": "^3.0.5",
-    "redux-logger": "^2.3.2",
-    "redux-simple-router": "^2.0.3",
+    "redux": "^3.1.4",
+    "redux-logger": "^2.4.0",
+    "react-router-redux": "^2.0.4",
     "redux-thunk": "^1.0.3",
+    "rimraf": "^2.5.1",
     "semantic-ui-container": "^2.1.7",
     "semantic-ui-header": "^2.1.7",
     "semantic-ui-icon": "^2.1.7",
@@ -46,8 +48,8 @@
     "react-transform-hmr": "^1.0.1",
     "rimraf": "^2.5.0",
     "style-loader": "^0.13.0",
-    "webpack": "^1.12.11",
     "webpack-dev-server": "^1.14.1",
-    "webpack-hot-middleware": "^2.6.0"
+    "webpack": "^1.12.12",
+    "webpack-hot-middleware": "^2.6.4"
   }
 }
