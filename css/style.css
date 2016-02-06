@@ -1474,8 +1474,8 @@ a.ui.inverted.grey.header:hover {
 
 @font-face {
   font-family: 'Icons';
-  src: url(/fonts/icons.eot);
-  src: url(/fonts/icons.eot?#iefix) format('embedded-opentype'), url(/fonts/icons.woff2) format('woff2'), url(/fonts/icons.woff) format('woff'), url(/fonts/icons.ttf) format('truetype'), url(/images/icons.svg#icons) format('svg');
+  src: url(fonts/icons.eot);
+  src: url(fonts/icons.eot?#iefix) format('embedded-opentype'), url(fonts/icons.woff2) format('woff2'), url(fonts/icons.woff) format('woff'), url(fonts/icons.ttf) format('truetype'), url(images/icons.svg#icons) format('svg');
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
