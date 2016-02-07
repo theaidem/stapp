@@ -3,11 +3,13 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+var port = 3001;
+
 module.exports = {
 	devtool: '#inline-source-map',
 	entry: [
 		'eventsource-polyfill', // necessary for hot reloading with IE
-		'webpack-dev-server/client?http://0.0.0.0:3001',
+		'webpack-dev-server/client?http://0.0.0.0:' + port,
 		'webpack/hot/only-dev-server',
 		'./src/scripts/index'
 	],
@@ -28,7 +30,7 @@ module.exports = {
 	],
 	module: {
 		loaders: [
-			{ test: /\.(png|jpg)$/, loader: 'file-loader?name=/src/images/[name].[ext]' },
+			{ test: /\.(png|jpg)$/, loader: 'file?name=/src/images/[name].[ext]' },
 			{ test: /\.js$/, loaders: ['babel'], include: path.join(__dirname, 'src/scripts') },
 			{ test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css') },
  			{ test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "file?name=/fonts/[name].[ext]&mimetype=application/font-woff"},
@@ -42,6 +44,6 @@ module.exports = {
 		historyApiFallback: true,
 		stats: { colors: true },
 		hot: true,
-		port: 3001
+		port: port
 	}
 };

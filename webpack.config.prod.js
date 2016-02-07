@@ -8,11 +8,27 @@ module.exports = {
 		'./src/scripts/index'
 	],
 	output: {
-		filename: 'js/app.js',
+		filename: 'js/app.[hash].js',
 		path: path.join(__dirname, 'dist')
 	},
 	plugins: [
-		new ExtractTextPlugin('css/style.css'),
+		new webpack.optimize.OccurenceOrderPlugin(),
+		new webpack.NoErrorsPlugin(),
+		new webpack.DefinePlugin({
+			'process.env': {
+				'GH_PAGES': JSON.stringify(JSON.parse(process.env.GH_PAGES || 'false') ),
+				'NODE_ENV': '"production"'
+			},
+		}),
+		new webpack.optimize.UglifyJsPlugin({
+			compressor: {
+				warnings: false
+			},
+			output: {
+				comments: false
+			} 
+		}),
+		new ExtractTextPlugin('css/style.[hash].css'),
 		new HtmlWebpackPlugin({
 			title: 'stapp',
 			filename: 'index.html',
@@ -22,14 +38,14 @@ module.exports = {
 	],
 	module: {
 		loaders: [
-			{ test: /\.(png|jpg)$/, loader: 'file-loader?name=/src/images/[name].[ext]' },
 			{ test: /\.js$/, loaders: ['babel'], include: path.join(__dirname, 'src/scripts') },
 			{ test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css') },
- 			{ test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: "file?name=/fonts/[name].[ext]&mimetype=application/font-woff"},
-			{ test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,loader: "file?name=/fonts/[name].[ext]&mimetype=application/font-woff"}, 
-			{ test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "file?name=/fonts/[name].[ext]&mimetype=application/octet-stream"}, 
-			{ test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file?name=/fonts/[name].[ext]"}, 
-			{ test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "file?name=/images/[name].[ext]&mimetype=image/svg+xml" }
+			{ test: /\.(png|jpg)$/, loader: 'file?name=/src/images/[name].[ext]' },
+			{ test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=/fonts/[name].[hash].[ext]&mimetype=application/font-woff'},
+			{ test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,loader: 'file?name=/fonts/[name].[hash].[ext]&mimetype=application/font-woff'}, 
+			{ test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=/fonts/[name].[hash].[ext]&mimetype=application/octet-stream'}, 
+			{ test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=/fonts/[name].[hash].[ext]'}, 
+			{ test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file?name=/images/[name].[hash].[ext]&mimetype=image/svg+xml' }
 		]
 	}
 };

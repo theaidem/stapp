@@ -6,8 +6,9 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "build:webpack": "cross-env NODE_ENV=production ./node_modules/.bin/webpack --config webpack.config.prod.js",
+    "build:webpack": "NODE_ENV=production ./node_modules/.bin/webpack --config webpack.config.prod.js",
     "build": "npm run clean && npm run build:webpack",
+    "deploy:gh-pages": "GH_PAGES=true npm run build && ./node_modules/.bin/gh-pages -d dist && npm run clean",
     "start": "./node_modules/.bin/webpack-dev-server --config webpack.config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,14 +16,15 @@
   "license": "MIT",
   "dependencies": {
     "babel-core": "^6.4.5",
+    "gh-pages": "^0.9.0",
     "history": "^1.17.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redux": "^4.1.2",
     "react-router": "^1.0.3",
+    "react-router-redux": "^2.0.4",
     "redux": "^3.1.4",
     "redux-logger": "^2.4.0",
-    "react-router-redux": "^2.0.4",
     "redux-thunk": "^1.0.3",
     "rimraf": "^2.5.1",
     "semantic-ui-container": "^2.1.7",
