@@ -16,13 +16,13 @@
 @import '~semantic-ui-loader/loader.css';
 /*@import '~semantic-ui-rail/rail.css';*/
 /*@import '~semantic-ui-reveal/reveal.css';*/
-/*@import '~semantic-ui-segment/segment.css';*/
+@import '~semantic-ui-segment/segment.css';
 /*@import '~semantic-ui-step/step.css';*/
 
 /* Semantic UI Collections */
 /*@import '~semantic-ui-breadcrumb/breadcrumb.css';*/
 /*@import '~semantic-ui-form/form.css';*/
-/*@import '~semantic-ui-grid/grid.css';*/
+@import '~semantic-ui-grid/grid.css';
 @import '~semantic-ui-menu/menu.css';
 /*@import '~semantic-ui-message/message.css';*/
 /*@import '~semantic-ui-table/table.css';*/

@@ -11,15 +11,15 @@ class Main extends Component {
 		const { children } = this.props
 
 		return (
-			<div className="main">
-				<div className="ui vertical segment">
-					<div className="ui grid container">
+			<div className="ui main grid">
+				<div className="ui row">
+					<div className="ui container">
 						<Menu { ...this.props }/>
 					</div>
 				</div>
 				
-				<div className="ui vertical segment">
-					<div className="ui grid container">
+				<div className="ui row">
+					<div className="ui container">
 						{ children }
 					</div>
 				</div>
