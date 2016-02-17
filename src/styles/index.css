@@ -3,16 +3,16 @@
 @import '~semantic-ui-site/site.css';
 
 /*  Semantic UI Elements */
-/*@import '~semantic-ui-button/button.css';*/
+@import '~semantic-ui-button/button.css';
 @import '~semantic-ui-container/container.css';
-/*@import '~semantic-ui-divider/divider.css';*/
+@import '~semantic-ui-divider/divider.css';
 /*@import '~semantic-ui-flag/flag.css';*/
 @import '~semantic-ui-header/header.css';
 @import '~semantic-ui-icon/icon.css';
 /*@import '~semantic-ui-image/image.css';*/
 /*@import '~semantic-ui-input/input.css';*/
 /*@import '~semantic-ui-label/label.css';*/
-/*@import '~semantic-ui-list/list.css';*/
+@import '~semantic-ui-list/list.css';
 @import '~semantic-ui-loader/loader.css';
 /*@import '~semantic-ui-rail/rail.css';*/
 /*@import '~semantic-ui-reveal/reveal.css';*/
