@@ -2,17 +2,17 @@ import { createStore, applyMiddleware, compose } from 'redux'
 import createLogger from 'redux-logger';
 import thunk from 'redux-thunk'
 import reducers from '../reducers'
-import { syncHistory } from 'react-router-redux'
 
-import createBrowserHistory from 'history/lib/createBrowserHistory'
-import createHashHistory from 'history/lib/createHashHistory'
+import { routerMiddleware } from 'react-router-redux'
+import { browserHistory, hashHistory } from 'react-router'
 
 export function configureStore(initialState = {}) {
 
 	// Use hash location for Github Pages
 	// otherwise switch to HTML5 history.
-	const createHistory = process.env.GH_PAGES ? createHashHistory : createBrowserHistory
-	const router = syncHistory(createHistory())
+	const historyType = process.env.GH_PAGES ? hashHistory : browserHistory
+
+	const router = routerMiddleware(historyType)
 	let middlewares = [ router, thunk ]
 
 	if (process.env.NODE_ENV !== 'production') {

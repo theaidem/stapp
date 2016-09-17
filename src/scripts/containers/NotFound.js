@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import { connect } from 'react-redux'
-import { routeActions } from 'react-router-redux'
+import { goBack } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
 
 class NotFound extends Component {
@@ -11,7 +11,7 @@ class NotFound extends Component {
 
 	render() {
 
-		const { goBack } = this.props
+		const { back } = this.props
 
 		return (
 			<div className="ui active inverted dimmer">
@@ -19,8 +19,8 @@ class NotFound extends Component {
 					<h2 className="ui aligned icon blue header">
 						<i className="browser icon"></i>404
 						<div className="sub header">
-							<div>Page not found</div> 
-							<a className="" onClick={() => goBack()}>back</a>
+							<div>Page not found</div>
+							<a className="" onClick={() => back()}>back</a>
 						</div>
 					</h2>
 				</div>
@@ -30,7 +30,7 @@ class NotFound extends Component {
 }
 
 NotFound.propTypes = {
-	goBack: PropTypes.func.isRequired,
+	back: PropTypes.func.isRequired,
 }
 
 function mapStateToProps(state) {
@@ -39,7 +39,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({
-		goBack: routeActions.goBack
+		back: goBack
 	}, dispatch)
 }
 
