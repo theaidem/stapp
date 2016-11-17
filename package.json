@@ -9,7 +9,7 @@
     "build": "npm run clean && npm run build:webpack",
     "build:webpack": "NODE_ENV=production node -r babel-register ./node_modules/.bin/webpack --config webpack.config.prod.js",
     "deploy:gh-pages": "GH_PAGES=true npm run build && ./node_modules/.bin/gh-pages -d dist && npm run clean",
-    "start": "webpack-dashboard -- node -r babel-register ./node_modules/.bin/webpack-dev-server --config webpack.config.dev.js",
+    "start": "node -r babel-register ./node_modules/.bin/webpack-dev-server --config webpack.config.dev.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Max Kokorin",
@@ -54,7 +54,6 @@
     "rimraf": "^2.5.1",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.12",
-    "webpack-dashboard": "^0.1.8",
     "webpack-dev-server": "^1.14.1",
     "webpack-hot-middleware": "^2.6.4"
   }
