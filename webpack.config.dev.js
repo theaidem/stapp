@@ -1,5 +1,4 @@
 let webpack = require('webpack')
-let DashboardPlugin = require('webpack-dashboard/plugin')
 import baseConfig from './webpack.config.base'
 
 const port = 3001
@@ -15,7 +14,6 @@ module.exports = {
 	],
 	plugins: [
 		...baseConfig.plugins,
-		new DashboardPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin()
 	],
