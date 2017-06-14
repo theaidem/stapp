@@ -15,7 +15,7 @@ module.exports = {
 	plugins: [
 		...baseConfig.plugins,
 		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoErrorsPlugin()
+		new webpack.NoEmitOnErrorsPlugin()
 	],
 	module: {
 		...baseConfig.module,

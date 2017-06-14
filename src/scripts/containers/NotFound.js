@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { goBack } from 'react-router-redux'
 import { bindActionCreators } from 'redux'
@@ -27,10 +27,6 @@ class NotFound extends Component {
 			</div>
 		)
 	}
-}
-
-NotFound.propTypes = {
-	back: PropTypes.func.isRequired,
 }
 
 function mapStateToProps(state) {

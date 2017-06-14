@@ -24,10 +24,10 @@ export function doAppInit() {
 
 		dispatch(appInitRequest())
 
-		//Emulate async operation, 
-		//here you may call XHR to your backend 
+		//Emulate async operation,
+		//here you may call XHR to your backend
 		//and dispatch `appInitSuccess` or `appInitFailure` actions
 		setTimeout(() => (dispatch(appInitSuccess())), 1000)
-		
+
 	}
 }

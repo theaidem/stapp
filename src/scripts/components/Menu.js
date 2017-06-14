@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 
 class Menu extends Component {
 
@@ -10,10 +10,10 @@ class Menu extends Component {
 	render() {
 		return (
 			<div className="ui secondary pointing menu">
-				<Link className="item" to="/" activeClassName="active">Home</Link>
-				<Link className="item" to="/about" activeClassName="active">About</Link>
+				<Link className="item" to="/">Home</Link>
+				<Link className="item" to="/about">About</Link>
 				<div className="right menu">
-					<Link className="item" to="/login" activeClassName="active">Login</Link>
+					<Link className="item" to="/login">Login</Link>
 				</div>
 			</div>
 		)
