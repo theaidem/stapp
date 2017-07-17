@@ -5,7 +5,7 @@ module.exports = {
 	...baseConfig,
 	plugins: [
 		...baseConfig.plugins,
-		new webpack.optimize.OccurenceOrderPlugin(),
+		new webpack.optimize.OccurrenceOrderPlugin(),
 		new webpack.NoErrorsPlugin(),
 		new webpack.DefinePlugin({
 			'process.env': {
