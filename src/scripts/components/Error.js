@@ -9,12 +9,12 @@ class Error extends Component {
 	render() {
 		const { err } = this.props
 		return (
-			<div className="ui active inverted dimmer">
+			<div>
 				<div className="middle">
-					<h2 className="ui aligned icon red header">
-						<i className="warning sign icon"></i>
+					<h2>
+						<i></i>
 						Application error
-						<div className="sub header">{ err }</div>
+						<div>{ err }</div>
 					</h2>
 				</div>
 			</div>

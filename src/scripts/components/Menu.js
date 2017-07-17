@@ -9,10 +9,10 @@ class Menu extends Component {
 
 	render() {
 		return (
-			<div className="ui secondary pointing menu">
+			<div>
 				<Link className="item" to="/">Home</Link>
 				<Link className="item" to="/about">About</Link>
-				<div className="right menu">
+				<div>
 					<Link className="item" to="/login">Login</Link>
 				</div>
 			</div>

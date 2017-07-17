@@ -8,8 +8,8 @@ class Load extends Component {
 
 	render() {
 		return (
-			<div className="ui active inverted dimmer">
-				<div className="ui text loader">Please wait</div>
+			<div>
+				<div>Please wait</div>
 			</div>
 		)
 	}
