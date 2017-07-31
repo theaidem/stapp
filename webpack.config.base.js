@@ -16,6 +16,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'stapp',
 			filename: 'index.html',
+			inject: false,
 			template: '!!ejs-loader!src/index.ejs',
 			favicon: path.join(__dirname, 'src', 'images', 'favicon.ico')
 		})
