@@ -11,11 +11,8 @@ class Error extends Component {
 		return (
 			<div>
 				<div className="middle">
-					<h2>
-						<i></i>
-						Application error
-						<div>{ err }</div>
-					</h2>
+					<h2>😨 Application error</h2>
+					<div>{ err }</div>
 				</div>
 			</div>
 		)

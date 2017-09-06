@@ -15,14 +15,9 @@ class NotFound extends Component {
 
 		return (
 			<div>
-				<div className="middle">
-					<h2>
-						<i></i>404
-						<div>
-							<div>Page not found</div>
-							<a className="" onClick={() => back()}>back</a>
-						</div>
-					</h2>
+				<div className="middle">		
+					<h2>404 Page not found</h2>
+					<h3 onClick={() => back()}>👈 back</h3>
 				</div>
 			</div>
 		)

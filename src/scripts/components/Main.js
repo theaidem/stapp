@@ -19,6 +19,10 @@ class Main extends Component {
 				<div>
 					{ children }
 				</div>
+
+				<footer>
+					footer
+				</footer>
 			</div>
 		)
 	}

@@ -10,11 +10,9 @@ class Menu extends Component {
 	render() {
 		return (
 			<div>
-				<Link className="item" to="/">Home</Link>
-				<Link className="item" to="/about">About</Link>
-				<div>
-					<Link className="item" to="/login">Login</Link>
-				</div>
+				<Link to="/">Home</Link>
+				<Link to="/about">About</Link>
+				<Link to="/login">Login</Link>
 			</div>
 		)
 	}

@@ -2,19 +2,15 @@
 
 #stapp {
 	height: 100%;
-	padding-top: 10px;
+	padding-top: 5px;
 }
 
 .middle {
 	position: absolute;
+	text-align: center;
 	top: 50%;
 	left: 50%;
 	-webkit-transform: translateX(-50%) translateY(-50%);
 	-ms-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
-}
-
-.ui.footer.segment {
-	margin: 5em 0em 0em;
-	padding: 5em 0em;
 }

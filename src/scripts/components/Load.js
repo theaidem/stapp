@@ -8,7 +8,8 @@ class Load extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className="middle">
+				<h1>🤘</h1>
 				<div>Please wait</div>
 			</div>
 		)
