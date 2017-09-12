@@ -32,6 +32,6 @@ export function getRouter(store = null) {
 						</Switch>
 					</App>
 			</div>
-    </ConnectedRouter>
+    	</ConnectedRouter>
 	)
 }
