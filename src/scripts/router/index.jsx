@@ -4,9 +4,9 @@ import Main from '../components/Main'
 import Home from '../components/Home'
 import About from '../components/About'
 import NotFound from '../containers/NotFound'
-import { Route, Switch } from 'react-router-dom'
-import { ConnectedRouter } from 'react-router-redux'
-import { createBrowserHistory, createHashHistory  } from 'history'
+import {Route, Switch} from 'react-router-dom'
+import {ConnectedRouter} from 'react-router-redux'
+import {createBrowserHistory, createHashHistory} from 'history'
 
 // Use hash location for Github Pages
 // otherwise switch to HTML5 history.

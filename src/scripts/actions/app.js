@@ -1,4 +1,4 @@
-import { APP_INIT_REQUEST, APP_INIT_SUCCESS, APP_INIT_FAILURE } from '../constants/actions'
+import {APP_INIT_REQUEST, APP_INIT_SUCCESS, APP_INIT_FAILURE} from '../constants/actions'
 
 function appInitRequest() {
     return {

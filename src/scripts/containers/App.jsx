@@ -1,7 +1,7 @@
-import { bindActionCreators } from 'redux'
-import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
-import { connect } from 'react-redux'
+import {bindActionCreators} from 'redux'
+import React, {Component} from 'react'
+import {withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
 import Load from '../components/Load'
 import Error from '../components/Error'
 import * as AppActions from '../actions/app'
@@ -17,7 +17,7 @@ class App extends Component {
     }
 
     render() {
-        const { isLoading, children, err } = this.props
+        const {isLoading, children, err} = this.props
         if (err) {return <Error err={err}/>}
         return isLoading ? <Load/> : children
     }

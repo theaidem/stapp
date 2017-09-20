@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 
 class Error extends Component {
 
@@ -7,7 +7,7 @@ class Error extends Component {
     }
 
     render() {
-        const { err } = this.props
+        const {err} = this.props
         return (
             <div>
                 <div className="middle">

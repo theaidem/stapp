@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { goBack } from 'react-router-redux'
-import { bindActionCreators } from 'redux'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
+import {goBack} from 'react-router-redux'
+import {bindActionCreators} from 'redux'
 
 class NotFound extends Component {
 
@@ -11,7 +11,7 @@ class NotFound extends Component {
 
     render() {
 
-        const { back } = this.props
+        const {back} = this.props
 
         return (
             <div>
@@ -23,7 +23,6 @@ class NotFound extends Component {
         )
     }
 }
-
 
 const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({

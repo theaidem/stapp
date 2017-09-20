@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import Menu from './Menu'
 
 class Main extends Component {
@@ -8,7 +8,7 @@ class Main extends Component {
     }
 
     render() {
-        const { children } = this.props
+        const {children} = this.props
 
         return (
             <div>

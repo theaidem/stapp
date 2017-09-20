@@ -4,7 +4,8 @@
         "node": true,
         "es6": true
     },
-    "extends": "eslint:recommended",
+    "extends": ["eslint:recommended"],
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
@@ -13,6 +14,7 @@
         "sourceType": "module"
     },
     "plugins": [
+        "babel",
         "react"
     ],
     "rules": {
@@ -31,6 +33,12 @@
         "semi": [
             "error",
             "never"
-        ]
+        ],
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "babel/new-cap": 1,
+        "babel/object-curly-spacing": 1,
+        "babel/no-invalid-this": 1,
+        "babel/semi": 0
     }
 }
