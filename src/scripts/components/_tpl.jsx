@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
 
-class tpl extends Component {
+class Tpl extends Component {
 
     constructor(props) {
         super(props)
@@ -38,4 +38,4 @@ const mapDispatchToProps = (dispatch) => {
     return bindActionCreators({}, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(tpl)
+export default connect(mapStateToProps, mapDispatchToProps)(Tpl)

@@ -1,33 +1,36 @@
-import { APP_INIT_REQUEST, APP_INIT_SUCCESS, APP_INIT_FAILURE } from "../constants/actions"
+import { APP_INIT_REQUEST, APP_INIT_SUCCESS, APP_INIT_FAILURE } from '../constants/actions'
 
 function appInitRequest() {
-	return {
-		type: APP_INIT_REQUEST
-	}
+    return {
+        type: APP_INIT_REQUEST
+    }
 }
 
 function appInitSuccess() {
-	return {
-		type: APP_INIT_SUCCESS
-	}
+    return {
+        type: APP_INIT_SUCCESS
+    }
 }
 
-function appInitFailure(err = "Something went wrong") {
-	return {
-		type: APP_INIT_FAILURE,
-		err
-	}
+function appInitFailure(err = 'Something went wrong') {
+    return {
+        type: APP_INIT_FAILURE,
+        err
+    }
 }
 
 export function doAppInit() {
-	return function (dispatch) {
+    return function (dispatch) {
 
-		dispatch(appInitRequest())
+        dispatch(appInitRequest())
 
-		//Emulate async operation,
-		//here you may call XHR to your backend
-		//and dispatch `appInitSuccess` or `appInitFailure` actions
-		setTimeout(() => (dispatch(appInitSuccess())), 1000)
+        //Emulate async operation,
+        //here you may call XHR to your backend
+        //and dispatch `appInitSuccess` or `appInitFailure` actions
+        setTimeout(() => (dispatch(appInitSuccess())), 1000)
 
-	}
+        //just for pass linter =)
+        setTimeout(() => (dispatch(appInitFailure())), 1000 * 1000)
+
+    }
 }

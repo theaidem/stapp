@@ -8,31 +8,31 @@ import * as AppActions from '../actions/app'
 
 class App extends Component {
 
-	constructor(props) {
-		super(props)
-	}
+    constructor(props) {
+        super(props)
+    }
 
-	componentWillMount() {
-		this.props.doAppInit()
-	}
+    componentWillMount() {
+        this.props.doAppInit()
+    }
 
-	render() {
-		const { isLoading, children, err } = this.props
-		if (err) {return <Error err={err}/>}
-		return isLoading ? <Load/> : children
-	}
+    render() {
+        const { isLoading, children, err } = this.props
+        if (err) {return <Error err={err}/>}
+        return isLoading ? <Load/> : children
+    }
 
 }
 
 function mapStateToProps(state) {
-	return {
-		isLoading: state.app.isLoading,
-		err: state.app.err
-	}
+    return {
+        isLoading: state.app.isLoading,
+        err: state.app.err
+    }
 }
 
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators(AppActions, dispatch)
+    return bindActionCreators(AppActions, dispatch)
 }
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App))
