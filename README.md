@@ -1,4 +1,4 @@
-Bitstinct frontend
+Stapp frontend
 ========
 
 ## Development
