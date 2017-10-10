@@ -1,4 +1,8 @@
-import {APP_INIT_REQUEST, APP_INIT_SUCCESS, APP_INIT_FAILURE} from '../constants/actions'
+import {
+    APP_CLEAR_ERRS,
+    APP_INIT_SUCCESS,
+    APP_INIT_FAILURE
+} from '../actions/app'
 
 const initState = {
     isLoading: true,
@@ -9,14 +13,24 @@ export default function app(state = initState, action) {
 
     switch (action.type) {
 
-    case APP_INIT_REQUEST:
-        return Object.assign({}, state, {})
+    case APP_CLEAR_ERRS:
+        return {
+            ...state,
+            err: null
+        }
 
     case APP_INIT_SUCCESS:
-        return Object.assign({}, state, {isLoading: false})
+        return {
+            ...state,
+            isLoading: false
+        }
 
     case APP_INIT_FAILURE:
-        return Object.assign({}, state, {isLoading: false, err: action.err})
+        return {
+            ...state,
+            isLoading: false,
+            err: action.err
+        }
 
     default:
         return state

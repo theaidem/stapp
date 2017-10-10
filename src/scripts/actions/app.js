@@ -1,25 +1,35 @@
-import {APP_INIT_REQUEST, APP_INIT_SUCCESS, APP_INIT_FAILURE} from '../constants/actions'
+export const APP_CLEAR_ERRS = 'APP_CLEAR_ERRS'
+export const APP_INIT_REQUEST = 'APP_INIT_REQUEST'
+export const APP_INIT_SUCCESS = 'APP_INIT_SUCCESS'
+export const APP_INIT_FAILURE = 'APP_INIT_FAILURE'
 
-function appInitRequest() {
+export const appClearErrs = () => {
+    return {
+        type: APP_CLEAR_ERRS
+    }
+}
+
+const appInitRequest = () => {
     return {
         type: APP_INIT_REQUEST
     }
 }
 
-function appInitSuccess() {
+const appInitSuccess = () => {
     return {
         type: APP_INIT_SUCCESS
     }
 }
 
-function appInitFailure(err = 'Something went wrong') {
+// eslint-disable-next-line no-unused-vars
+const appInitFailure = (err = 'Something went wrong') => {
     return {
         type: APP_INIT_FAILURE,
         err
     }
 }
 
-export function doAppInit() {
+export const doAppInit = () => {
     return function (dispatch) {
 
         dispatch(appInitRequest())
@@ -28,9 +38,6 @@ export function doAppInit() {
         //here you may call XHR to your backend
         //and dispatch `appInitSuccess` or `appInitFailure` actions
         setTimeout(() => (dispatch(appInitSuccess())), 1000)
-
-        //just for pass linter =)
-        setTimeout(() => (dispatch(appInitFailure())), 1000 * 1000)
 
     }
 }
