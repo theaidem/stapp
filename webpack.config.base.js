@@ -4,7 +4,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
     entry: [
-        './src/scripts/index'
+        './source/scripts/index'
     ],
     output: {
         filename: 'js/app.[hash:4].js',
@@ -19,14 +19,14 @@ module.exports = {
             title: 'stapp',
             filename: 'index.html',
             inject: false,
-            template: '!!ejs-loader!src/index.ejs',
-            favicon: path.join(__dirname, 'src', 'images', 'favicon.ico')
+            template: '!!ejs-loader!source/index.ejs',
+            favicon: path.join(__dirname, 'source', 'images', 'favicon.ico')
         })
     ],
     module: {
         loaders: [
-            { test: /\.js$/, loaders: ['babel-loader'], include: path.join(__dirname, 'src/scripts') },
-            { test: /\.jsx$/, loaders: ['babel-loader'], include: path.join(__dirname, 'src/scripts') },
+            { test: /\.js$/, loaders: ['babel-loader'], include: path.join(__dirname, 'source/scripts') },
+            { test: /\.jsx$/, loaders: ['babel-loader'], include: path.join(__dirname, 'source/scripts') },
             { test: /\.css$/, loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader', publicPath: "../" })},
             { test: /\.(png|jpg)$/, loader: 'file-loader?name=images/[name].[hash:4].[ext]' },
             { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?name=fonts/[name].[hash:4].[ext]&mimetype=application/font-woff'},

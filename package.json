@@ -10,8 +10,8 @@
     "build:webpack": "NODE_ENV=production node -r babel-register ./node_modules/.bin/webpack --config webpack.config.prod.js",
     "deploy:gh-pages": "GH_PAGES=true npm run build && ./node_modules/.bin/gh-pages -d dist && npm run clean",
     "start": "npm run lint && node -r babel-register ./node_modules/.bin/webpack-dev-server --config webpack.config.dev.js",
-    "lint": "clear && ./node_modules/.bin/eslint --ext .js --ext .jsx src/scripts",
-    "lint:fix": "clear && ./node_modules/.bin/eslint --fix --ext .js --ext .jsx src/scripts",
+    "lint": "clear && ./node_modules/.bin/eslint --ext .js --ext .jsx source/scripts",
+    "lint:fix": "clear && ./node_modules/.bin/eslint --fix --ext .js --ext .jsx source/scripts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Max Kokorin",
