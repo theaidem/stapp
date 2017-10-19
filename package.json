@@ -29,6 +29,7 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "pre-commit": "^1.2.2",
     "babel-core": "^6.4.5",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.0.0",
@@ -55,5 +56,6 @@
     "webpack": "^2.6.1",
     "webpack-dev-server": "^2.4.5",
     "webpack-hot-middleware": "^2.6.4"
-  }
+  },
+  "pre-commit": ["lint"]
 }
