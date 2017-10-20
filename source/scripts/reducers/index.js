@@ -7,7 +7,8 @@ const action = (state = null, action) => (action.type)
 
 const rootReducer = combineReducers({
     routing: routerReducer,
-    app, action
+    app,
+    action // <- always must be latest at the list
 })
 
 export default rootReducer
