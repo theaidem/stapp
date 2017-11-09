@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Menu from './Menu'
+import Menu from '../Menu'
 
 class Main extends Component {
 
@@ -15,7 +15,7 @@ class Main extends Component {
                 <div>
                     <Menu { ...this.props }/>
                 </div>
-			
+
                 <div>
                     { children }
                 </div>

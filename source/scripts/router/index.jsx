@@ -1,6 +1,6 @@
 import React from 'react'
 import App from '../containers/App'
-import Main from '../components/Main'
+import Main from '../components/layouts/Main'
 import Home from '../components/Home'
 import About from '../components/About'
 import NotFound from '../containers/NotFound'
