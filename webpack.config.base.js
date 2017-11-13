@@ -17,6 +17,7 @@ module.exports = {
         new ExtractTextPlugin('css/style.[hash:4].css'),
         new HtmlWebpackPlugin({
             title: 'stapp',
+            ghPage: process.env.GH_PAGES || false,
             filename: 'index.html',
             inject: false,
             template: '!!ejs-loader!source/index.ejs',
