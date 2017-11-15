@@ -34,6 +34,8 @@
             "error",
             "never"
         ],
+        "no-case-declarations": 0,
+        "jsx-quotes": ["error", "prefer-double"],
         "react/jsx-uses-react": "error",
         "react/jsx-uses-vars": "error",
         "babel/new-cap": 1,
