@@ -26,15 +26,15 @@ module.exports = {
     ],
     module: {
         loaders: [
-            { test: /\.js$/, loaders: ['babel-loader'], include: path.join(__dirname, 'source/scripts') },
-            { test: /\.jsx$/, loaders: ['babel-loader'], include: path.join(__dirname, 'source/scripts') },
-            { test: /\.css$/, loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader', publicPath: "../" })},
-            { test: /\.(png|jpg)$/, loader: 'file-loader?name=images/[name].[hash:4].[ext]' },
-            { test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?name=fonts/[name].[hash:4].[ext]&mimetype=application/font-woff'},
-            { test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,loader: 'file-loader?name=fonts/[name].[hash:4].[ext]&mimetype=application/font-woff'},
-            { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?name=fonts/[name].[hash:4].[ext]&mimetype=application/octet-stream'},
-            { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?name=fonts/[name].[hash:4].[ext]'},
-            { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?name=images/[name].[hash:4].[ext]&mimetype=image/svg+xml' }
+            {test: /\.js$/, loaders: ['babel-loader'], include: path.join(__dirname, 'source/scripts')},
+            {test: /\.jsx$/, loaders: ['babel-loader'], include: path.join(__dirname, 'source/scripts')},
+            {test: /\.css$/, loader: ExtractTextPlugin.extract({fallback: 'style-loader', use: 'css-loader', publicPath: '../'})},
+            {test: /\.(png|jpg)$/, loader: 'file-loader?name=images/[name].[hash:4].[ext]'},
+            {test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?name=fonts/[name].[hash:4].[ext]&mimetype=application/font-woff'},
+            {test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/,loader: 'file-loader?name=fonts/[name].[hash:4].[ext]&mimetype=application/font-woff'},
+            {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?name=fonts/[name].[hash:4].[ext]&mimetype=application/octet-stream'},
+            {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?name=fonts/[name].[hash:4].[ext]'},
+            {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'file-loader?name=images/[name].[hash:4].[ext]&mimetype=image/svg+xml'}
         ]
     }
 }
