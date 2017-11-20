@@ -23,7 +23,7 @@ function RouteWithLayout({layout, component, ...rest}){
 export function getRouter() {
     return (
         <ConnectedRouter history={historyType}>
-            <div className='root'>
+            <div className="root">
                 <App>
                     <Switch>
                         <RouteWithLayout layout={Main} exact path="/" component={Home}/>
