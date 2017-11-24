@@ -1,6 +1,7 @@
 var path = require('path')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
     entry: [
@@ -15,13 +16,16 @@ module.exports = {
     },
     plugins: [
         new ExtractTextPlugin('css/style.[hash:4].css'),
+        new FaviconsWebpackPlugin({
+            logo: path.join(__dirname, 'source', 'images', 'logo.png'),
+            prefix: 'icons-[hash:4]/',
+        }),
         new HtmlWebpackPlugin({
             title: 'stapp',
             ghPage: process.env.GH_PAGES || false,
             filename: 'index.html',
             inject: false,
-            template: '!!ejs-loader!source/index.ejs',
-            favicon: path.join(__dirname, 'source', 'images', 'favicon.ico')
+            template: '!!ejs-loader!source/index.ejs'
         })
     ],
     module: {

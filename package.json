@@ -19,6 +19,7 @@
   "author": "Max Kokorin",
   "license": "MIT",
   "dependencies": {
+    "favicons-webpack-plugin": "^0.0.7",
     "history": "^4.6.2",
     "inquirer": "^3.3.0",
     "pluralize": "^7.0.0",
@@ -68,4 +69,3 @@
   },
   "pre-commit": "lint-staged"
 }
-
