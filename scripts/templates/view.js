@@ -2,7 +2,7 @@ const view = (strings) => (`
 import React, {Component} from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import * as ${strings.singularCap}Actions from '../actions/${strings.singular}'
+import * as ${strings.singularCap}Actions from '../../actions/${strings.singular}'
 
 class ${strings.singularCap}View extends Component {
 
