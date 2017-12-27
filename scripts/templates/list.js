@@ -16,7 +16,7 @@ class ${strings.singularCap}List extends Component {
 
     render() {
         const {${strings.plural}} = this.props
-        return <div>Total ${strings.pluralCap} {${strings.plural}.length()}</div>
+        return <div>Total ${strings.pluralCap} {${strings.plural}.length}</div>
     }
 
 }
