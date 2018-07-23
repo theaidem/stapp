@@ -2,8 +2,7 @@ import {createStore, applyMiddleware, compose} from 'redux'
 import {createLogger} from 'redux-logger'
 import thunk from 'redux-thunk'
 import reducers from '../reducers'
-
-import {routerMiddleware} from 'react-router-redux'
+import {connectRouter, routerMiddleware} from 'connected-react-router'
 import {createBrowserHistory, createHashHistory} from 'history'
 
 export function configureStore(initialState = {}) {
@@ -24,7 +23,7 @@ export function configureStore(initialState = {}) {
 
         applyMiddleware(...middlewares)
 
-    )(createStore)(reducers, initialState)
+    )(createStore)(connectRouter(historyType)(reducers), initialState)
 
     if (module.hot) {
         // Enable Webpack hot module replacement for reducers

@@ -5,7 +5,7 @@ import Home from '../components/Home'
 import About from '../components/About'
 import NotFound from '../containers/NotFound'
 import {Route, Switch} from 'react-router-dom'
-import {ConnectedRouter} from 'react-router-redux'
+import {ConnectedRouter} from 'connected-react-router'
 import {createBrowserHistory, createHashHistory} from 'history'
 
 // Use hash location for Github Pages

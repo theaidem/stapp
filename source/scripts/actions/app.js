@@ -1,7 +1,15 @@
+import {push} from 'connected-react-router'
+
 export const APP_CLEAR_ERRS = 'APP_CLEAR_ERRS'
 export const APP_INIT_REQUEST = 'APP_INIT_REQUEST'
 export const APP_INIT_SUCCESS = 'APP_INIT_SUCCESS'
 export const APP_INIT_FAILURE = 'APP_INIT_FAILURE'
+
+export const appRedirect = path => {
+    return function (dispatch) {
+        dispatch(push(path))
+    }
+}
 
 export const appClearErrs = () => {
     return {

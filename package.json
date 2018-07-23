@@ -19,6 +19,7 @@
   "author": "Max Kokorin",
   "license": "MIT",
   "dependencies": {
+    "connected-react-router": "^4.3.0",
     "favicons-webpack-plugin": "^0.0.7",
     "history": "^4.6.2",
     "inquirer": "^3.3.0",
@@ -28,7 +29,6 @@
     "react-redux": "^5.0.5",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "react-router-redux": "^5.0.0-alpha.8",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0"

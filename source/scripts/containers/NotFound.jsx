@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {goBack} from 'react-router-redux'
+import {goBack} from 'connected-react-router'
 import {bindActionCreators} from 'redux'
 
 class NotFound extends Component {
