@@ -2,20 +2,19 @@ const list = (strings) => (`
 import React, {Component} from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import * as ${strings.singularCap}Actions from '../../actions/${strings.singular}'
+import Load from '../app/common/Load'
+import * as ${strings.singularCap}Actions from './${strings.singularCap}Actions'
 
 class ${strings.singularCap}List extends Component {
 
     constructor(props) {
         super(props)
-    }
-
-    componentWillMount() {
-        this.props.doLoad${strings.pluralCap}()
+        props.doLoad${strings.pluralCap}()
     }
 
     render() {
         const {${strings.plural}} = this.props
+        if (!${strings.plural}) return <Load text={'Loading ${strings.plural}'}/>
         return <div>Total ${strings.pluralCap} {${strings.plural}.length}</div>
     }
 

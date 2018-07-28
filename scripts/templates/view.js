@@ -2,21 +2,19 @@ const view = (strings) => (`
 import React, {Component} from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import * as ${strings.singularCap}Actions from '../../actions/${strings.singular}'
+import Load from '../app/common/Load'
+import * as ${strings.singularCap}Actions from './${strings.singularCap}Actions'
 
 class ${strings.singularCap}View extends Component {
 
     constructor(props) {
         super(props)
-    }
-
-    componentWillMount() {
-        this.props.doLoad${strings.singularCap}()
+        props.doLoad${strings.singularCap}()
     }
 
     render() {
         const {${strings.singular}} = this.props
-        if (!${strings.singular}) return <div>load...</div>
+        if (!${strings.singular}) return <Load text={'Loading ${strings.singular}'}/>
         return <div>${strings.singularCap} {${strings.singular}.id}</div>
     }
 

@@ -2,12 +2,13 @@ const update = (strings) => (`
 import React, {Component} from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import * as ${strings.singularCap}Actions from '../../actions/${strings.singular}'
+import * as ${strings.singularCap}Actions from './${strings.singularCap}Actions'
 
 class ${strings.singularCap}Update extends Component {
 
     constructor(props) {
         super(props)
+        props.doLoad${strings.singularCap}()
         this.state = {
             ${strings.singular}: null
         }
@@ -17,10 +18,6 @@ class ${strings.singularCap}Update extends Component {
         if (nextProps.action === ${strings.singularCap}Actions.${strings.pluralUpper}_LOAD_SUCCESS) {
             this.setState({${strings.singular}: nextProps.${strings.singular}})
         }
-    }
-
-    componentWillMount() {
-        this.props.doLoad${strings.singularCap}()
     }
 
     render() {

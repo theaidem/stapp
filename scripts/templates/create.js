@@ -2,7 +2,7 @@ const create = (strings) => (`
 import React, {Component} from 'react'
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux'
-import * as ${strings.singularCap}Actions from '../../actions/${strings.singular}'
+import * as ${strings.singularCap}Actions from './${strings.singularCap}Actions'
 
 class ${strings.singularCap}Create extends Component {
 

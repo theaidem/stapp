@@ -32,13 +32,30 @@ const filesQuestion = [{
     message: 'What do you want to generate?',
     name: 'files',
     choices: [
-        new inquirer.Separator(' = Redux stuff (CRUD flow) = '),
+        new inquirer.Separator(' = Redux stuff = '),
         {
             name: 'Actions',
             checked: true
         },
         {
             name: 'Reducer',
+            checked: true
+        },
+        new inquirer.Separator(' = Redux actions (CRUD flow) = '),
+        {
+            name: 'Create actions',
+            checked: true
+        },
+        {
+            name: 'Read actions',
+            checked: true
+        },
+        {
+            name: 'Update actions',
+            checked: true
+        },
+        {
+            name: 'Delete actions',
             checked: true
         },
         new inquirer.Separator(' = React stuff (Components) = '),
@@ -77,27 +94,26 @@ inquirer.prompt(entityQuestion).then((answer) => {
         answer.files.forEach(item => {
             switch (item) {
             case 'Actions':
-                createFile(`${root}/source/scripts/actions`, `${strings.singular}.js`, action(strings))
+                createFile(`${root}/source/scripts/${strings.singular}`, `${strings.singularCap}${item}.js`, action(strings, answer.files))
                 break
             case 'Reducer':
-                createFile(`${root}/source/scripts/reducers`, `${strings.singular}.js`, reducer(strings))
+                createFile(`${root}/source/scripts/${strings.singular}`, `${strings.singularCap}${item}.js`, reducer(strings, answer.files))
                 break
             case 'View':
-                createFile(`${root}/source/scripts/components/${strings.singular}`, `${strings.singularCap}${item}.jsx`, view(strings))
+                createFile(`${root}/source/scripts/${strings.singular}`, `${strings.singularCap}${item}.jsx`, view(strings))
                 break
             case 'List':
-                createFile(`${root}/source/scripts/components/${strings.singular}`, `${strings.singularCap}${item}.jsx`, list(strings))
+                createFile(`${root}/source/scripts/${strings.singular}`, `${strings.singularCap}${item}.jsx`, list(strings))
                 break
             case 'Create':
-                createFile(`${root}/source/scripts/components/${strings.singular}`, `${strings.singularCap}${item}.jsx`, create(strings))
+                createFile(`${root}/source/scripts/${strings.singular}`, `${strings.singularCap}${item}.jsx`, create(strings))
                 break
             case 'Update':
-                createFile(`${root}/source/scripts/components/${strings.singular}`, `${strings.singularCap}${item}.jsx`, update(strings))
+                createFile(`${root}/source/scripts/${strings.singular}`, `${strings.singularCap}${item}.jsx`, update(strings))
                 break
             }
         })
     })
-
 })
 
 const createFile = (path, file, content) => {

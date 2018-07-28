@@ -1,3 +1,3 @@
 export const CONFIG = {
-    API_ROOT: ''
+    API_ROOT: 'https://api.example.com/v1'
 }
