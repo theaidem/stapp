@@ -2,17 +2,14 @@ import {bindActionCreators} from 'redux'
 import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
-import Load from '../components/Load'
-import Error from '../components/Error'
-import * as AppActions from '../actions/app'
+import Load from './common/Load'
+import Error from './common/Error'
+import * as AppActions from './AppActions'
 
 class App extends Component {
 
     constructor(props) {
         super(props)
-    }
-
-    componentWillMount() {
         this.props.doAppInit()
     }
 

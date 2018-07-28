@@ -1,14 +1,14 @@
 import React, {Component} from 'react'
 
-class About extends Component {
+class Info extends Component {
 
     constructor(props) {
         super(props)
     }
 
     render() {
-        return <span>about page</span>
+        return <span>information page</span>
     }
 }
 
-export default About
+export default Info

@@ -1,7 +1,7 @@
 import 'whatwg-fetch'
 import {
     CONFIG
-} from '../constants/config'
+} from '../config'
 
 export default class API {
 

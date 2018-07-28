@@ -1,11 +1,11 @@
 import {createStore, applyMiddleware, compose} from 'redux'
 import {createLogger} from 'redux-logger'
 import thunk from 'redux-thunk'
-import reducers from '../reducers'
+import rootReducer from './reducers'
 import {connectRouter, routerMiddleware} from 'connected-react-router'
 import {createBrowserHistory, createHashHistory} from 'history'
 
-export function configureStore(initialState = {}) {
+export default function configureStore(initialState = {}) {
 
     // Use hash location for Github Pages
     // otherwise switch to HTML5 history.
@@ -23,12 +23,12 @@ export function configureStore(initialState = {}) {
 
         applyMiddleware(...middlewares)
 
-    )(createStore)(connectRouter(historyType)(reducers), initialState)
+    )(createStore)(connectRouter(historyType)(rootReducer), initialState)
 
     if (module.hot) {
         // Enable Webpack hot module replacement for reducers
-        module.hot.accept('../reducers', () => {
-            const nextReducer = require('../reducers')
+        module.hot.accept('./reducers', () => {
+            const nextReducer = require('./reducers')
             store.replaceReducer(nextReducer)
         })
     }

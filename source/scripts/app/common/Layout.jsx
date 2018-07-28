@@ -1,8 +1,8 @@
 import React, {Component} from 'react'
-import Header from '../Header'
-import Footer from '../Footer'
+import Header from './Header'
+import Footer from './Footer'
 
-class Main extends Component {
+class Layout extends Component {
 
     constructor(props) {
         super(props)
@@ -14,11 +14,11 @@ class Main extends Component {
         return (
             <div>
                 <Header/>
-                { children }
+                {children}
                 <Footer/>
             </div>
         )
     }
 }
 
-export default Main
+export default Layout

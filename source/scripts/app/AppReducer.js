@@ -2,7 +2,7 @@ import {
     APP_CLEAR_ERRS,
     APP_INIT_SUCCESS,
     APP_INIT_FAILURE
-} from '../actions/app'
+} from './AppActions'
 
 const initState = {
     isLoading: true,

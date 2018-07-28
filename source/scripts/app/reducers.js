@@ -1,4 +1,4 @@
-import app from './app'
+import app from './AppReducer'
 import {combineReducers} from 'redux'
 
 // eslint-disable-next-line no-unused-vars
