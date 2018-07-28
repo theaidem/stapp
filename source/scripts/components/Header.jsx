@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 
-class Menu extends Component {
+class Header extends Component {
 
     constructor(props) {
         super(props)
@@ -9,13 +9,14 @@ class Menu extends Component {
 
     render() {
         return (
-            <div>
+            <header>
+                <img src={`/${require('../../images/logo.png')}`} style={{width: 25, paddingRight: 5}}/>
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
-                <Link to="/login">Login</Link>
-            </div>
+                <Link to="/unknown">Unknown</Link>
+            </header>
         )
     }
 }
 
-export default Menu
+export default Header

@@ -1,20 +1,21 @@
 import React, {Component} from 'react'
+import {Link} from 'react-router-dom'
 
-class Error extends Component {
+class NotFound extends Component {
 
     constructor(props) {
         super(props)
     }
 
     render() {
-        const {err} = this.props
         return (
             <div className="middle">
-                <h2>Application error</h2>
-                <div>{ err }</div>
+                <h2>404</h2>
+                <Link to="/">home</Link>
             </div>
         )
     }
 }
 
-export default Error
+export default NotFound
+

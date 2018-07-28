@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import Menu from '../Menu'
+import Header from '../Header'
+import Footer from '../Footer'
 
 class Main extends Component {
 
@@ -12,17 +13,9 @@ class Main extends Component {
 
         return (
             <div>
-                <div>
-                    <Menu { ...this.props }/>
-                </div>
-
-                <div>
-                    { children }
-                </div>
-
-                <footer>
-					footer
-                </footer>
+                <Header/>
+                { children }
+                <Footer/>
             </div>
         )
     }

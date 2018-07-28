@@ -5,6 +5,7 @@ const port = 3001
 
 module.exports = {
     ...baseConfig,
+    mode: 'development',
     devtool: '#inline-source-map',
     entry: [
         ...baseConfig.entry,
@@ -19,8 +20,8 @@ module.exports = {
     ],
     module: {
         ...baseConfig.module,
-        loaders: [
-            ...baseConfig.module.loaders
+        rules: [
+            ...baseConfig.module.rules,
         ]
     },
     devServer: {
