@@ -63,3 +63,8 @@ yarn run deploy:gh-pages
 
 Make sure the application repo should hosted at github.
 Follow to http://{your-name}.github.io/{app-name} and you rock!
+
+## License
+
+This project is licensed under the MIT license, Copyright (c) 2018 Max
+Kokorin. For more information see `LICENSE.md`.
