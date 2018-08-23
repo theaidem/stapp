@@ -6,7 +6,7 @@ var FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const styleUses = (process.env.NODE_ENV === 'production') ? [{
     loader: MiniCssExtractPlugin.loader,
     options: {
-        publicPath: '/css'
+        publicPath: '/'
     }
 }, 'css-loader'] : ['style-loader', {
     loader: 'css-loader',
