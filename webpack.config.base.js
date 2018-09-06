@@ -35,7 +35,7 @@ module.exports = {
         new FaviconsWebpackPlugin({
             logo: path.join(__dirname, 'source', 'images',
                 'logo.png'),
-            prefix: 'icons/',
+            prefix: 'icons-[hash]/',
         }),
         new HtmlWebpackPlugin({
             title: 'stapp',
